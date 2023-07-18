@@ -1,0 +1,36 @@
+﻿@model Product
+
+@{
+    ViewBag.Title = "Delete Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Delete Product</h1>
+
+@using (Html.BeginForm("DeleteConfirmed", "Product", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(model => model.ProductId)
+        @Html.DisplayFor(model => model.ProductId)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.ProductName)
+        @Html.DisplayFor(model => model.ProductName)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Rate)
+        @Html.DisplayFor(model => model.Rate)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Description)
+        @Html.DisplayFor(model => model.Description)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.CategoryName)
+        @Html.DisplayFor(model => model.CategoryName)
+    </div>
+    <div>
+        <input type="submit" value="Delete" />
+        <a href="@Url.Action("Index")">Back to Index</a>
+    </div>
+}

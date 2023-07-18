@@ -1,0 +1,34 @@
+﻿@model List<Product>
+
+@{
+    ViewBag.Title = "Product Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Product Index</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>ProductId</th>
+            <th>ProductName</th>
+            <th>Rate</th>
+            <th>Description</th>
+            <th>CategoryName</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ProductId</td>
+                <td>@product.ProductName</td>
+                <td>@product.Rate</td>
+                <td>@product.Description</td>
+                <td>@product.CategoryName</td>
+                <td><a href="@Url.Action("Edit", new { productId = product.ProductId })">Edit</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

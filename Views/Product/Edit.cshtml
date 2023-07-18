@@ -1,0 +1,42 @@
+﻿@model Product
+
+@{
+    ViewBag.Title = "Edit Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit Product</h1>
+
+@using (Html.BeginForm("Update", "Product", FormMethod.Post))
+{
+    @Html.ValidationSummary()
+
+    <div>
+        @Html.LabelFor(model => model.ProductId)
+        @Html.DisplayFor(model => model.ProductId)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.ProductName)
+        @Html.TextBoxFor(model => model.ProductName)
+        @Html.ValidationMessageFor(model => model.ProductName)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Rate)
+        @Html.TextBoxFor(model => model.Rate)
+        @Html.ValidationMessageFor(model => model.Rate)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.Description)
+        @Html.TextAreaFor(model => model.Description)
+        @Html.ValidationMessageFor(model => model.Description)
+    </div>
+    <div>
+        @Html.LabelFor(model => model.CategoryName)
+        @Html.TextBoxFor(model => model.CategoryName)
+        @Html.ValidationMessageFor(model => model.CategoryName)
+    </div>
+    <div>
+        <input type="submit" value="Update" />
+        <a href="@Url.Action("Index")">Back to Index</a>
+    </div>
+}

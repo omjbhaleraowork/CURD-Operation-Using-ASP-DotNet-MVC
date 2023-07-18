@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - My MVC App</title>
+    <link rel="stylesheet" href="~/Content/styles.css" />
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>My MVC App</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="@Url.Action("Index", "Product")">Product Index</a></li>
+                <li><a href="@Url.Action("Edit", "Product")">Edit Product</a></li>
+                <li><a href="@Url.Action("Delete", "Product")">Delete Product</a></li>
+            </ul>
+        </nav>
+        <main>
+            @RenderBody()
+        </main>
+        <footer>
+            &copy; @DateTime.Now.Year My MVC App
+        </footer>
+    </div>
+</body>
+</html>
